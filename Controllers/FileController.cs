@@ -31,13 +31,15 @@ public class FileController : ControllerBase
             
             return new Response(){
                 Resultado = true,
-                Mensagem = "Imagem salva com sucesso :)"
+                Mensagem = "Imagem salva com sucesso :)",
+                Payload = file
             };
         } catch(Exception ex)
         {
             return new Response(){
                 Resultado = false,
-                Mensagem = ex.Message
+                Mensagem = ex.Message,
+                Payload = file
             };
         }
     }
